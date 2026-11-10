@@ -1,0 +1,7 @@
+{
+  "name": "Stone",
+  "baseColor": [0.43, 0.46, 0.50, 1.0],
+  "specularColor": [0.15, 0.17, 0.20],
+  "shininess": 10.0,
+  "albedoTexture": ""
+}

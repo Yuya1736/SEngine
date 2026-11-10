@@ -1,0 +1,7 @@
+{
+  "name": "Player Blue",
+  "baseColor": [0.20, 0.52, 0.92, 1.0],
+  "specularColor": [0.72, 0.82, 0.95],
+  "shininess": 48.0,
+  "albedoTexture": ""
+}

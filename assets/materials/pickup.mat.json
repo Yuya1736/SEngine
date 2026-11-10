@@ -1,0 +1,7 @@
+{
+  "name": "Energy Cell",
+  "baseColor": [1.0, 0.72, 0.12, 1.0],
+  "specularColor": [1.0, 0.95, 0.68],
+  "shininess": 96.0,
+  "albedoTexture": ""
+}

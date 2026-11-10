@@ -1,0 +1,7 @@
+{
+  "name": "Door Bronze",
+  "baseColor": [0.72, 0.34, 0.12, 1.0],
+  "specularColor": [0.95, 0.73, 0.38],
+  "shininess": 72.0,
+  "albedoTexture": ""
+}

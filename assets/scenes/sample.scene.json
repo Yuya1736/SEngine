@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "entities": [
+    {
+      "id": 0,
+      "name": "Main Camera",
+      "components": {
+        "transform": {
+          "position": [0.0, 4.8, 10.5],
+          "rotationEuler": [-24.0, 0.0, 0.0],
+          "scale": [1.0, 1.0, 1.0]
+        },
+        "camera": {"fov": 60.0, "near": 0.1, "far": 250.0, "primary": true},
+        "script": {
+          "name": "ThirdPersonCamera",
+          "properties": "{\"targetTag\":\"Player\",\"offset\":[0.0,3.6,7.5],\"lookHeight\":1.2,\"smoothing\":8.0}"
+        },
+        "tag": "MainCamera"
+      }
+    },
+    {
+      "id": 1,
+      "name": "Sun",
+      "components": {
+        "transform": {"position": [0.0, 10.0, 0.0], "rotationEuler": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]},
+        "directionalLight": {
+          "direction": [-0.42, -1.0, -0.28],
+          "color": [1.0, 0.94, 0.82],
+          "intensity": 1.15
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": "Ground",
+      "components": {
+        "transform": {"position": [0.0, -0.05, 0.0], "rotationEuler": [0.0, 0.0, 0.0], "scale": [30.0, 1.0, 30.0]},
+        "meshRenderer": {"mesh": "builtin:plane", "material": "0b6c8a22-61f4-4f4e-9e5b-100000000010", "visible": true},
+        "boxCollider": {"halfExtents": [15.0, 0.05, 15.0], "trigger": false},
+        "tag": "Ground"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Player",
+      "components": {
+        "transform": {"position": [0.0, 0.95, 2.0], "rotationEuler": [0.0, 0.0, 0.0], "scale": [0.8, 1.8, 0.8]},
+        "meshRenderer": {"mesh": "builtin:cube", "material": "0b6c8a22-61f4-4f4e-9e5b-100000000011", "visible": true},
+        "characterController": {"halfExtents": [0.4, 0.9, 0.4], "gravity": -26.0},
+        "script": {
+          "name": "PlayerController",
+          "properties": "{\"moveSpeed\":6.0,\"jumpSpeed\":7.5}"
+        },
+        "tag": "Player"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Gate Frame",
+      "components": {
+        "transform": {"position": [0.0, 0.0, 0.0], "rotationEuler": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}
+      }
+    },
+    {
+      "id": 5,
+      "name": "Door",
+      "components": {
+        "transform": {"position": [0.0, 1.5, -6.0], "rotationEuler": [0.0, 0.0, 0.0], "scale": [3.0, 3.0, 0.3]},
+        "meshRenderer": {"mesh": "builtin:cube", "material": "0b6c8a22-61f4-4f4e-9e5b-100000000012", "visible": true},
+        "boxCollider": {"halfExtents": [1.5, 1.5, 0.15], "trigger": false},
+        "tag": "Door"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Left Gate Post",
+      "components": {
+        "hierarchy": {"parent": 4},
+        "transform": {"position": [-2.0, 1.75, -6.0], "rotationEuler": [0.0, 0.0, 0.0], "scale": [0.5, 3.5, 0.7]},
+        "meshRenderer": {"mesh": "builtin:cube", "material": "0b6c8a22-61f4-4f4e-9e5b-100000000015", "visible": true},
+        "boxCollider": {"halfExtents": [0.25, 1.75, 0.35], "trigger": false}
+      }
+    },
+    {
+      "id": 7,
+      "name": "Right Gate Post",
+      "components": {
+        "hierarchy": {"parent": 4},
+        "transform": {"position": [2.0, 1.75, -6.0], "rotationEuler": [0.0, 0.0, 0.0], "scale": [0.5, 3.5, 0.7]},
+        "meshRenderer": {"mesh": "builtin:cube", "material": "0b6c8a22-61f4-4f4e-9e5b-100000000015", "visible": true},
+        "boxCollider": {"halfExtents": [0.25, 1.75, 0.35], "trigger": false}
+      }
+    },
+    {
+      "id": 8,
+      "name": "Door Sensor",
+      "components": {
+        "transform": {"position": [0.0, 1.5, -4.9], "rotationEuler": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]},
+        "boxCollider": {"halfExtents": [2.4, 1.6, 0.7], "trigger": true},
+        "script": {
+          "name": "DoorTrigger",
+          "properties": "{\"doorTag\":\"Door\",\"openHeight\":3.6,\"speed\":2.8}"
+        },
+        "tag": "DoorTrigger"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Crate Stack",
+      "components": {
+        "transform": {"position": [0.0, 0.0, 0.0], "rotationEuler": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]}
+      }
+    },
+    {
+      "id": 10,
+      "name": "Crate A",
+      "components": {
+        "hierarchy": {"parent": 9},
+        "transform": {"position": [-3.2, 0.75, 0.4], "rotationEuler": [0.0, 18.0, 0.0], "scale": [1.5, 1.5, 1.5]},
+        "meshRenderer": {"mesh": "0b6c8a22-61f4-4f4e-9e5b-100000000002", "material": "0b6c8a22-61f4-4f4e-9e5b-100000000014", "visible": true},
+        "boxCollider": {"halfExtents": [0.75, 0.75, 0.75], "trigger": false},
+        "tag": "Obstacle"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Crate B",
+      "components": {
+        "hierarchy": {"parent": 9},
+        "transform": {"position": [-3.2, 2.25, 0.4], "rotationEuler": [0.0, -12.0, 0.0], "scale": [1.5, 1.5, 1.5]},
+        "meshRenderer": {"mesh": "0b6c8a22-61f4-4f4e-9e5b-100000000002", "material": "0b6c8a22-61f4-4f4e-9e5b-100000000014", "visible": true},
+        "boxCollider": {"halfExtents": [0.75, 0.75, 0.75], "trigger": false}
+      }
+    },
+    {
+      "id": 12,
+      "name": "Energy Cell",
+      "components": {
+        "transform": {"position": [2.4, 1.0, 1.6], "rotationEuler": [0.0, 0.0, 0.0], "scale": [0.6, 0.6, 0.6]},
+        "meshRenderer": {"mesh": "builtin:sphere", "material": "0b6c8a22-61f4-4f4e-9e5b-100000000013", "visible": true},
+        "sphereCollider": {"radius": 0.75, "trigger": true},
+        "script": {
+          "name": "Pickup",
+          "properties": "{\"label\":\"Energy Cell\"}"
+        },
+        "tag": "Pickup"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Energy Light",
+      "components": {
+        "transform": {"position": [2.4, 1.2, 1.6], "rotationEuler": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]},
+        "pointLight": {"color": [1.0, 0.52, 0.12], "intensity": 3.2, "range": 8.0}
+      }
+    },
+    {
+      "id": 14,
+      "name": "Stone Pillar",
+      "components": {
+        "transform": {"position": [3.2, 1.5, -1.8], "rotationEuler": [0.0, 0.0, 0.0], "scale": [0.7, 3.0, 0.7]},
+        "meshRenderer": {"mesh": "builtin:cube", "material": "0b6c8a22-61f4-4f4e-9e5b-100000000015", "visible": true},
+        "boxCollider": {"halfExtents": [0.35, 1.5, 0.35], "trigger": false},
+        "tag": "Obstacle"
+      }
+    },
+    {
+      "id": 15,
+      "name": "Marker Ring",
+      "components": {
+        "transform": {"position": [0.0, 0.12, 2.0], "rotationEuler": [0.0, 0.0, 0.0], "scale": [3.5, 0.04, 3.5]},
+        "meshRenderer": {"mesh": "builtin:cube", "material": "0b6c8a22-61f4-4f4e-9e5b-100000000016", "visible": true}
+      }
+    }
+  ]
+}

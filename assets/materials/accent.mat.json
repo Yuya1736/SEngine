@@ -1,0 +1,7 @@
+{
+  "name": "Warm Accent",
+  "baseColor": [0.86, 0.48, 0.16, 1.0],
+  "specularColor": [1.0, 0.78, 0.42],
+  "shininess": 64.0,
+  "albedoTexture": ""
+}
